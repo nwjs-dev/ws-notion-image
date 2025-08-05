@@ -1,0 +1,22 @@
+{
+  "family": "play-test",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "2048",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "play-test",
+      "image": "020030040185.dkr.ecr.us-east-1.amazonaws.com/play-test:latest",
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/playwright-logs",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}
