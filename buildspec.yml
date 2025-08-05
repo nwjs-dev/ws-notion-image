@@ -12,7 +12,6 @@ phases:
     commands:
       - echo "Buildando imagem Docker"
       - docker build -t $IMAGE_URI .
-      - docker tag ws-notion:latest 020030040185.dkr.ecr.us-east-1.amazonaws.com/ws-notion:latest
   post_build:
     commands:
       - echo "Enviando imagem para o ECR again!"
