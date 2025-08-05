@@ -1,0 +1,23 @@
+name: Webscraping Image Deploy to ECR
+on:
+  push:
+    branches: [main]
+  pull-requests:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@4
+      - name: use node.js 22.x
+      - uses: pnpm/action-setup@v4
+      - name: use node.js 22.x
+        with:
+          node-version: "22.x"
+          cache: "pnpm"
+
+      - run: npm pkg delete scripts.prepare
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile

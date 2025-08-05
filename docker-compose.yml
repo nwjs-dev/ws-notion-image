@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: play-test
+    container_name: ws-notion
     env_file:
       - .env
     volumes:
