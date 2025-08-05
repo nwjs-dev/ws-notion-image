@@ -3,6 +3,8 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - echo "Verificando Docker..."
+      - docker --version
       - echo "Logando no Amazon ECR"
       - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REPOSITORY
       - IMAGE_URI=$ECR_REPOSITORY:latest
